@@ -1,0 +1,195 @@
+{
+  "diode": [],
+  "ebb": [],
+  "unsplash": [
+    {
+      "scene": "animal_01_dog",
+      "depth_raw": {
+        "edge_iou": 0.026948818897637797,
+        "boundary_gradient": 0.034191202372312546
+      },
+      "depth_refined": {
+        "edge_iou": 0.08504466875507599,
+        "boundary_gradient": 0.07984800636768341
+      },
+      "bokeh_baseline": {
+        "subject_sharpness": 0.00021590598043985665,
+        "background_blur": 0.00011444814299466088,
+        "boundary_bleed": 0.10384658724069595
+      },
+      "bokeh_refined": {
+        "subject_sharpness": 0.005375245586037636,
+        "background_blur": 0.0010499212658032775,
+        "boundary_bleed": 0.19599276781082153
+      }
+    },
+    {
+      "scene": "animal_02_cat",
+      "depth_raw": {
+        "edge_iou": 0.14388119587023535,
+        "boundary_gradient": 0.13881951570510864
+      },
+      "depth_refined": {
+        "edge_iou": 0.14175675228933188,
+        "boundary_gradient": 0.16009646654129028
+      },
+      "bokeh_baseline": {
+        "subject_sharpness": 0.00021563449990935624,
+        "background_blur": 1.0602486327115912e-05,
+        "boundary_bleed": 0.06716612726449966
+      },
+      "bokeh_refined": {
+        "subject_sharpness": 0.0032106912694871426,
+        "background_blur": 2.2692871425533667e-05,
+        "boundary_bleed": 0.08054767549037933
+      }
+    },
+    {
+      "scene": "object_01_coffee",
+      "depth_raw": {
+        "edge_iou": 0.07257000889488698,
+        "boundary_gradient": 0.15207599103450775
+      },
+      "depth_refined": {
+        "edge_iou": 0.1746736810759839,
+        "boundary_gradient": 0.21107730269432068
+      },
+      "bokeh_baseline": {
+        "subject_sharpness": 0.0001807896769605577,
+        "background_blur": 2.7287820557830855e-05,
+        "boundary_bleed": 0.09450918436050415
+      },
+      "bokeh_refined": {
+        "subject_sharpness": 0.00255903834477067,
+        "background_blur": 6.859021232230589e-05,
+        "boundary_bleed": 0.11104992032051086
+      }
+    },
+    {
+      "scene": "portrait_01_woman_lights",
+      "depth_raw": {
+        "edge_iou": 0.08018110722370858,
+        "boundary_gradient": 0.11848399043083191
+      },
+      "depth_refined": {
+        "edge_iou": 0.08879575900852496,
+        "boundary_gradient": 0.11926407366991043
+      },
+      "bokeh_baseline": {
+        "subject_sharpness": 0.0007312059169635177,
+        "background_blur": 0.00018003201694227755,
+        "boundary_bleed": 0.11460192501544952
+      },
+      "bokeh_refined": {
+        "subject_sharpness": 0.007701902184635401,
+        "background_blur": 0.0011519123800098896,
+        "boundary_bleed": 0.19116701185703278
+      }
+    },
+    {
+      "scene": "portrait_02_man_window",
+      "depth_raw": {
+        "edge_iou": 0.16052123155341802,
+        "boundary_gradient": 0.25919413566589355
+      },
+      "depth_refined": {
+        "edge_iou": 0.25507998858276815,
+        "boundary_gradient": 0.33616870641708374
+      },
+      "bokeh_baseline": {
+        "subject_sharpness": 0.0008876810315996408,
+        "background_blur": 1.5692448869231157e-05,
+        "boundary_bleed": 0.11590031534433365
+      },
+      "bokeh_refined": {
+        "subject_sharpness": 0.014546861872076988,
+        "background_blur": 6.849678902653977e-05,
+        "boundary_bleed": 0.13768301904201508
+      }
+    },
+    {
+      "scene": "portrait_03_curly_hair",
+      "depth_raw": {
+        "edge_iou": 0.10054802861927234,
+        "boundary_gradient": 0.0893729105591774
+      },
+      "depth_refined": {
+        "edge_iou": 0.16198071550869605,
+        "boundary_gradient": 0.15692423284053802
+      },
+      "bokeh_baseline": {
+        "subject_sharpness": 0.00015938850992824882,
+        "background_blur": 7.974612344696652e-06,
+        "boundary_bleed": 0.07247420400381088
+      },
+      "bokeh_refined": {
+        "subject_sharpness": 0.002418515970930457,
+        "background_blur": 1.5454619642696343e-05,
+        "boundary_bleed": 0.10057146847248077
+      }
+    },
+    {
+      "scene": "portrait_04_bokeh_lights",
+      "depth_raw": {
+        "edge_iou": 0.2529314767314034,
+        "boundary_gradient": 0.38355982303619385
+      },
+      "depth_refined": {
+        "edge_iou": 0.27890280541574,
+        "boundary_gradient": 0.3047480881214142
+      },
+      "bokeh_baseline": {
+        "subject_sharpness": 0.000613163283560425,
+        "background_blur": 1.4267725418903865e-05,
+        "boundary_bleed": 0.14035829901695251
+      },
+      "bokeh_refined": {
+        "subject_sharpness": 0.01753915287554264,
+        "background_blur": 5.971756763756275e-05,
+        "boundary_bleed": 0.17548909783363342
+      }
+    },
+    {
+      "scene": "portrait_05_outdoor",
+      "depth_raw": {
+        "edge_iou": 0.20857048433885358,
+        "boundary_gradient": 0.23907451331615448
+      },
+      "depth_refined": {
+        "edge_iou": 0.2313283034540043,
+        "boundary_gradient": 0.2573375701904297
+      },
+      "bokeh_baseline": {
+        "subject_sharpness": 0.00023496824724134058,
+        "background_blur": 2.8355379981803708e-05,
+        "boundary_bleed": 0.11773733794689178
+      },
+      "bokeh_refined": {
+        "subject_sharpness": 0.0031123082153499126,
+        "background_blur": 4.310975054977462e-05,
+        "boundary_bleed": 0.14927175641059875
+      }
+    },
+    {
+      "scene": "portrait_06_glasses",
+      "depth_raw": {
+        "edge_iou": 0.1522434817759213,
+        "boundary_gradient": 0.3889266848564148
+      },
+      "depth_refined": {
+        "edge_iou": 0.1680472310144342,
+        "boundary_gradient": 0.3485668897628784
+      },
+      "bokeh_baseline": {
+        "subject_sharpness": 0.00013731657236348838,
+        "background_blur": 2.636918543430511e-05,
+        "boundary_bleed": 0.2682482600212097
+      },
+      "bokeh_refined": {
+        "subject_sharpness": 0.005600467789918184,
+        "background_blur": 0.00031624562689103186,
+        "boundary_bleed": 0.36123669147491455
+      }
+    }
+  ]
+}

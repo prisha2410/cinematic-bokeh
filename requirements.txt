@@ -1,0 +1,25 @@
+# Core
+torch>=2.1.0
+torchvision>=0.16.0
+numpy>=1.24.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+scipy>=1.11.0
+
+# Depth Anything V2 (install via the official repo or pip)
+# We import it directly from a local clone of:
+#   https://github.com/DepthAnything/Depth-Anything-V2
+# (Download instructions in download_weights.py)
+
+# Segmentation
+mediapipe>=0.10.9
+
+# Visualization / report
+matplotlib>=3.7.0
+tqdm>=4.66.0
+
+# Optional: nicer notebook UX
+ipywidgets>=8.1.0
+
+# Optional but recommended for benchmark evaluation:
+lpips>=0.1.4         # perceptual bokeh similarity on EBB!

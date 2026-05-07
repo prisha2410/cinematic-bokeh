@@ -1,0 +1,27 @@
+# Virtual environment
+.venv/
+
+# Model weights (too large for GitHub)
+models/
+
+# Dataset cache
+data/_cache/
+data/ebb/
+data/diode/
+data/unsplash/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# VS Code
+.vscode/
+
+# Output images (generated, not source)
+assets/output/
+assets/debug/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
