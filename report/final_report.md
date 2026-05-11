@@ -1,6 +1,6 @@
 # Semantically-Guided Depth Refinement for Cinematic Bokeh Synthesis from Single Monocular Images
 
-**Author:** [Your Name] | **Course:** [Course Name] | **Date:** April 2026
+**Author:** Prisha Khalasi | **Date:** April 2026
 
 ---
 
