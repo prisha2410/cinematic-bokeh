@@ -1,4 +1,4 @@
-# How the three reference papers connect to your methodology
+# How the three reference papers connect to methodology
 
 This is the scaffolding for the "Background" and "Method" sections of your report.
 Each paper is mapped to the specific design decision it justifies, plus the exact
