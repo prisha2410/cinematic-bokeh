@@ -1,9 +1,5 @@
 # How the three reference papers connect to methodology
 
-This is the scaffolding for the "Background" and "Method" sections of your report.
-Each paper is mapped to the specific design decision it justifies, plus the exact
-sentence-level claim you can make.
-
 ---
 
 ## Paper 1 — MiDaS (Ranftl et al., TPAMI 2020)
