@@ -1,7 +1,3 @@
-The issue is the nested code blocks inside the README are breaking the markdown. Here's the fixed version — the inner code blocks use 4-space indentation instead of backticks:
-
----
-
 # Semantically-Guided Depth Refinement for Cinematic Bokeh Synthesis
 
 Single-image cinematic bokeh from a monocular RGB input — no stereo camera, no training.
