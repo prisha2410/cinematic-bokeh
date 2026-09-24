@@ -1,4 +1,7 @@
-```markdown
+The issue is the nested code blocks inside the README are breaking the markdown. Here's the fixed version — the inner code blocks use 4-space indentation instead of backticks:
+
+---
+
 # Semantically-Guided Depth Refinement for Cinematic Bokeh Synthesis
 
 Single-image cinematic bokeh from a monocular RGB input — no stereo camera, no training.
@@ -52,8 +55,7 @@ Improvement is consistent across all 9 test images (portraits, animals, objects)
 
 *Left: raw Depth Anything V2 depth → naive bokeh with halo artifact. Right: refined depth (ours) → clean bokeh.*
 
-!<img width="2075" height="1482" alt="portrait_03_curly_hair_comparison" src="https://github.com/user-attachments/assets/e11f79c9-af46-4d4f-a5e8-d3552f54fc7c" />
-
+![Pipeline comparison](assets/debug/portrait_03_curly_hair_comparison.png)
 
 > **Depth maps (top row):** raw depth has a gradual, bleeding transition at the subject silhouette; refined depth has a sharp, flat subject plane with a clean boundary.
 > **Bokeh outputs (bottom row):** raw depth causes colour bleed and a soft halo at the hair and shoulders; refined depth produces a clean cutout with no fringe.
@@ -62,38 +64,29 @@ Improvement is consistent across all 9 test images (portraits, animals, objects)
 
 ## Setup
 
-```bash
-# 1. Create and activate a Python environment
-python -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+    python -m venv .venv
+    source .venv/bin/activate
+    pip install -r requirements.txt
+    git clone https://github.com/DepthAnything/Depth-Anything-V2 external/depth_anything_v2_repo
+    python download_weights.py
 
-# 2. Clone Depth Anything V2 (model definition is imported from it)
-git clone https://github.com/DepthAnything/Depth-Anything-V2 external/depth_anything_v2_repo
-
-# 3. Download pretrained weights (~100 MB, small variant by default)
-python download_weights.py
-```
-
-> For sharper edge-aware filtering, use `opencv-contrib-python` instead of `opencv-python`.
+For sharper edge-aware filtering, use `opencv-contrib-python` instead of `opencv-python`.
 
 ---
 
 ## Running on a Single Image
 
-```bash
-# Auto-focus on the segmented subject
-python run.py --input assets/input/your_photo.jpg
+    # Auto-focus on the segmented subject
+    python run.py --input assets/input/your_photo.jpg
 
-# Click-to-focus at a specific pixel (x=540, y=720)
-python run.py --input assets/input/your_photo.jpg --focus 540 720
+    # Click-to-focus at pixel (x=540, y=720)
+    python run.py --input assets/input/your_photo.jpg --focus 540 720
 
-# Stronger blur with a hexagonal kernel (cinematic lens look)
-python run.py --input assets/input/your_photo.jpg --kernel hexagonal --max-blur 35
+    # Hexagonal kernel, stronger blur
+    python run.py --input assets/input/your_photo.jpg --kernel hexagonal --max-blur 35
 
-# Use the larger ViT-Base depth model for cleaner depth maps
-python run.py --input assets/input/your_photo.jpg --depth-variant vitb
-```
+    # Larger depth model
+    python run.py --input assets/input/your_photo.jpg --depth-variant vitb
 
 ---
 
@@ -113,52 +106,40 @@ python run.py --input assets/input/your_photo.jpg --depth-variant vitb
 
 ## Benchmark Evaluation
 
-Evaluation is designed across three datasets, each measuring a different thing:
-
 | Dataset | Images | Ground Truth | Metrics |
 |---------|--------|--------------|---------|
 | **Unsplash** (in-the-wild) | 9 photos | None needed | Edge-IoU, Boundary Gradient |
 | **EBB!** (AIM 2020) | 10 pairs | Real f/1.8 photographs | PSNR, SSIM, LPIPS |
 | **DIODE** | 10 scenes | FARO laser-scanner depth | AbsRel, RMSE, δ₁/δ₂/δ₃ |
 
-```bash
-python data/scripts/download_all.py          # download benchmark data
-python evaluate_benchmark.py                 # run full benchmark
-python evaluate_benchmark.py --only unsplash # single dataset
-```
+    python data/scripts/download_all.py
+    python evaluate_benchmark.py
+    python evaluate_benchmark.py --only unsplash
 
-Results written to `report/`: `benchmark_table.md`, `benchmark_table.tex`, `benchmark_results.json`.
-
-See `data/MANIFEST.md` for full citations and licensing.
+Results written to `report/`. See `data/MANIFEST.md` for citations and licensing.
 
 ---
 
 ## Project Layout
 
-```
-cinematic-bokeh/
-├── src/
-│   ├── refiner.py           # ★ Novel: segmentation-guided depth refinement
-│   ├── bokeh.py             # Multi-layer bokeh — disk + hex kernels, premult alpha
-│   ├── pipeline.py          # End-to-end orchestration
-│   ├── depth_estimator.py   # Depth Anything V2 wrapper
-│   ├── segmenter.py         # MediaPipe Selfie Segmentation
-│   ├── evaluate.py          # Boundary-quality metrics (no GT needed)
-│   ├── metrics_depth.py     # DIODE depth metrics (AbsRel, RMSE, δ)
-│   ├── metrics_bokeh.py     # EBB! bokeh metrics (PSNR, SSIM, LPIPS)
-│   └── utils.py             # I/O and visualization helpers
-├── data/
-│   ├── MANIFEST.md          # Dataset citations and licenses
-│   └── scripts/             # Dataset download helpers
-├── assets/{input,output,debug}/
-├── models/                  # Cached weights (gitignored)
-├── notebooks/demo.ipynb     # Interactive playground
-├── report/                  # Benchmark tables + final report
-├── run.py                   # Single-image CLI
-├── evaluate_benchmark.py    # Full benchmark runner
-├── verify.py                # Sanity check (no weights needed)
-└── download_weights.py
-```
+    cinematic-bokeh/
+    ├── src/
+    │   ├── refiner.py           # ★ Novel: segmentation-guided depth refinement
+    │   ├── bokeh.py             # Multi-layer bokeh — disk + hex kernels, premult alpha
+    │   ├── pipeline.py          # End-to-end orchestration
+    │   ├── depth_estimator.py   # Depth Anything V2 wrapper
+    │   ├── segmenter.py         # MediaPipe Selfie Segmentation
+    │   ├── evaluate.py          # Boundary-quality metrics (no GT needed)
+    │   ├── metrics_depth.py     # DIODE depth metrics (AbsRel, RMSE, δ)
+    │   ├── metrics_bokeh.py     # EBB! bokeh metrics (PSNR, SSIM, LPIPS)
+    │   └── utils.py             # I/O and visualization helpers
+    ├── assets/{input,output,debug}/
+    ├── models/
+    ├── notebooks/demo.ipynb
+    ├── report/
+    ├── run.py
+    ├── evaluate_benchmark.py
+    └── download_weights.py
 
 ---
 
@@ -166,7 +147,6 @@ cinematic-bokeh/
 
 1. Yang et al. — *Depth Anything V2*, NeurIPS 2024
 2. Ranftl et al. — *Vision Transformers for Dense Prediction (DPT)*, ICCV 2021
-3. Ranftl et al. — *Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-Shot Cross-Dataset Transfer (MiDaS)*, TPAMI 2020
-4. Ignatov, Patel, Timofte — *Rendering Natural Camera Bokeh Effect with Deep Learning (EBB!)*, CVPRW 2020
-5. Vasiljevic et al. — *DIODE: A Dense Indoor and Outdoor DEpth Dataset*, arXiv 2019
-```
+3. Ranftl et al. — *MiDaS*, TPAMI 2020
+4. Ignatov, Patel, Timofte — *EBB!*, CVPRW 2020
+5. Vasiljevic et al. — *DIODE*, arXiv 2019
