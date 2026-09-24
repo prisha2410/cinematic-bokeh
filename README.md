@@ -51,7 +51,7 @@ Improvement is consistent across all 9 test images (portraits, animals, objects)
 
 *Left: raw Depth Anything V2 depth → naive bokeh with halo artifact. Right: refined depth (ours) → clean bokeh.*
 
-(<img width="2075" height="1482" alt="portrait_03_curly_hair_comparison" src="https://github.com/user-attachments/assets/998510d3-e991-4a65-90c2-1dfa50f7e459" />
+<img width="2075" height="1482" alt="portrait_03_curly_hair_comparison" src="https://github.com/user-attachments/assets/998510d3-e991-4a65-90c2-1dfa50f7e459" />
 
 
 > **Depth maps (top row):** raw depth has a gradual, bleeding transition at the subject silhouette; refined depth has a sharp, flat subject plane with a clean boundary.
